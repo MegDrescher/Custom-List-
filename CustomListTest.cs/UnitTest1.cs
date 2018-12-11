@@ -129,7 +129,6 @@ namespace CustomListTest.cs
         }
 
         [TestMethod]
-
         public void RemoveMethodTest3()
         {
             //Arrange
@@ -171,7 +170,7 @@ namespace CustomListTest.cs
             myList.Remove(2);
 
             //Assert
-            Assert.AreEqual(expectedResult, myList.Count);
+            Assert.AreEqual(1, myList.Count);
         }
         [TestMethod]
         public void RemoveMethod5() //failed test
@@ -190,228 +189,254 @@ namespace CustomListTest.cs
             myList.Remove(0);
 
             //Assert
-            Assert.AreEqual(expectedResult, myList.Count);
-        }
-
-        [TestMethod]
-        public void ToStringMethod1()
-        {
-            //Arrange
-            CustomList<int> myList = new CustomList<int>();
-            string expectedResult = "012";
-            //Act
-            myList.Add(0);
-            myList.Add(1);
-            myList.Add(2);
-            string actualResult = myList.ToString();
-
-            //Assert
-            Assert.AreEqual(expectedResult, actualResult);
-
-
-
-        }
-        [TestMethod]
-        public void ToStringMethod2()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-        }
-
-        [TestMethod]
-        public void ToStringMethod3()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void ToStringMethod4()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-        }
-
-        [TestMethod]
-        public void ToStringMethod5()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-        }
-
-        [TestMethod]
-        public void ZipMethod1()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-        }
-
-        [TestMethod]
-        public void ZipMethod2()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void ZipMethod3()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void ZipMethod4()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void ZipMethod5()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-        }
-
-        [TestMethod]
-        public void OverloadOperatorAddMethod1()
-        {   //Ararnge
-
-            //Act
-
-            //Assert
-
-        }
-        [TestMethod]
-        public void OverloadOperatorAddMethod2()
-        {
-            //Arrange
-
-            //Act
-
-
-            //Assert
-
-
-        }
-        [TestMethod]
-        public void OverloadOperatorAddMethod3()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void OverloadOperatorAddMethod4()
-        {
-            //Arrange
-
-            //Add
-
-            //Assert
-
-        }
-        [TestMethod]
-        public void OverloadOperatorAddMethod5()
-        {
-            //Arrange
-
-            //Add
-
-            //Assert
-        }
-
-        [TestMethod]
-        public void OverloadOperatorSubtractMethod1()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void OverloadOperatorSubtractMethod2()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void OverloadOperatorSubtractMethod3()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void OverloadOperatorSubtractMethod4()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-
-
-        }
-
-        [TestMethod]
-        public void OverloadOperatorSubtractMethod5()
-        {
-
-            //Arrange
-
-            //Act
-
-            //Assert
-
+            Assert.AreEqual(2, myList.Count);
         }
     }
 }
+
+[TestMethod]
+public void ToStringMethod1()
+{
+    //Arrange
+    CustomList<int> myList = new CustomList<int>();
+    string expectedResult = "012";
+    //Act
+    myList.Add(0);
+    myList.Add(1);
+    myList.Add(2);
+    string actualResult = myList.ToString();
+
+    //Assert
+    Assert.AreEqual(expectedResult, actualResult);
+
+
+
+}
+
+
+[TestMethod]
+public void ToStringMethod2()
+{
+    //override string return with spaces and not commas
+    //Arrange
+    string<int> List = new myList<int>() { 1, 2, 3, 4, 5, 6 };
+    string expectedResult = "1 2 3 4 5 ";
+    string result;
+
+    //Act
+    result = myList.ToString();
+    //Assert
+    Assert.AreEqual(ExpectedResult, actualResult);
+}
+
+
+
+[TestMethod]
+public void ToStringMethod3()
+{   //remove string from the list
+
+    //Arrange
+    List<List<int>> list = new List<List<int>>()
+
+    List<int> myList = new List<int>() { 1, 2, 3, 4, 5 };
+    bool result;
+
+    //Act
+    list.Add(myList);
+    result = list.Remove(myList);
+
+    //Assert
+    Assert.AreEqual(ExpectedResult, actualResult);
+}
+
+[TestMethod]
+public void ToStringMethod4()
+{   // 
+    //Arrange
+
+    //Act
+
+    //Assert
+}
+
+[TestMethod]
+public void ToStringMethod5()
+{
+    //Arrange
+
+    //Act
+
+    //Assert
+}
+
+//[TestMethod]
+////public void ZipMethod1()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+//}
+
+//[TestMethod]
+//public void ZipMethod2()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+//}
+
+//[TestMethod]
+//public void ZipMethod3()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+//}
+
+//[TestMethod]
+//public void ZipMethod4()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+//}
+
+//[TestMethod]
+//public void ZipMethod5()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+//}
+
+//[TestMethod]
+//public void OverloadOperatorAddMethod1()
+////add the two lists and combine them
+
+//{   //Ararnge
+//    List<int> list1 = new List<int>() { 10, 20, 30 };
+//    List<int> list2 = new List<int>() { 40, 50, 60 };
+//    List<int> expected = new List<int>() { 10, 20, 30, 40, 50, 60 };
+//    List<int> result;
+//    //Act
+//    result = list1 + list2;
+//    //Assert
+//    for (int i = 0; i < expected.Count; i++)
+//    {
+//        Assert.AreEqual(result[i], expected[i];)
+//            }
+//        }
+//        [TestMethod]
+//public void OverloadOperatorAddMethod2()
+//{
+//    //Arrange
+
+//    //Act
+
+
+//    //Assert
+
+
+//}
+//[TestMethod]
+//public void OverloadOperatorAddMethod3()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+//}
+
+//[TestMethod]
+//public void OverloadOperatorAddMethod4()
+//{
+//    //Arrange
+
+//    //Add
+
+//    //Assert
+
+//}
+//[TestMethod]
+//public void OverloadOperatorAddMethod5()
+//{
+//    //Arrange
+
+//    //Add
+
+//    //Assert
+//}
+
+//[TestMethod]
+//public void OverloadOperatorSubtractMethod1()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+//}
+
+//[TestMethod]
+//public void OverloadOperatorSubtractMethod2()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+//}
+
+//[TestMethod]
+//public void OverloadOperatorSubtractMethod3()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+//}
+
+//[TestMethod]
+//public void OverloadOperatorSubtractMethod4()
+//{
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+
+//}
+
+//[TestMethod]
+//public void OverloadOperatorSubtractMethod5()
+//{
+
+//    //Arrange
+
+//    //Act
+
+//    //Assert
+
+//}
+//  }
+//}
