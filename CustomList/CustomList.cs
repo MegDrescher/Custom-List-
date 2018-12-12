@@ -13,7 +13,7 @@ namespace CustomList
 //items = tempArray; would be the last thing used in the add method, resizing the Array
 
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerator<T>
     {
         public int Capacity;
 
@@ -77,6 +77,53 @@ namespace CustomList
             items = tempArray;
             count--;
         }
+
+        //use yield return after foreach loop & public IEnumerator GetEnumerator()
+        //convert list to string, using a for loop to create string
+        public void OverrideToString<T>()
+        {
+            CustomList<string> strings = new CustomList<string>();
+            
+
+
+        }
+
+
+
+
+
+        //foreach (int value in myList)
+
+        public void Zip(T value)
+        {
+
+        }
+    }
+
+            
+
+        //{
+        //    //{
+        //    for (int i = 0; i < this.Count; i++)
+        //    {
+        //        myList.Add([0]);
+        //        myList.Add(this[1]);
+        //        myList.Add([2]);
+
+        //}
+
+        //else
+        //{
+        //     for (int i = 0; i< .Count; i++)
+
+        //    {
+        //        myList.Add(this[0]);
+        //        myList.Add([1]);
+        //        myList.Add(this[2]);
+        //    }
+        //return myList;
+
     }
 }
+
 

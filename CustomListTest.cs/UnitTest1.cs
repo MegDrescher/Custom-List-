@@ -197,10 +197,10 @@ namespace CustomListTest.cs
 
 [TestMethod]
 public void ToStringMethod1()
-{
+{   //create a string of three numbers
     //Arrange
     CustomList<int> myList = new CustomList<int>();
-    string expectedResult = "012";
+    string expectedResult = "0 1 2";
     //Act
     myList.Add(0);
     myList.Add(1);
@@ -215,21 +215,19 @@ public void ToStringMethod1()
 [TestMethod]
 public void ToStringMethod2()
 {
-    //override string return with spaces and not commas
+    //override string return with spaces and not commas (yield return?)
     //Arrange
-    string<int> List = new myList<int>() { 1, 2, 3, 4, 5, 6 };
-    string expectedResult = { 1 2 3 4 5 };
-    string result;
+    List<int>List = new List<int>() { 1, 2, 3, 4, 5, 6 };
+    string expectedResult = "1 2 3 4 5";
+    string actualResult;
 
     //Act
-    result = myList.ToString();
+    actualResult = myList.ToString();
     //Assert
     for (int i = 0; i < expectedResult.Count; i++)
     {
-        Assert.AreEqual(Assert.AreEqual(result[i], expected[i]);
-    }
-
-    
+        Assert.AreEqual(Assert.AreEqual(actualResult[i], expectedResult.Count));
+    }   
    
 }
 
@@ -240,44 +238,53 @@ public void ToStringMethod3()
 {   //remove string from the list with bool
 
     //Arrange
-    List<List<int>> list = new List<List<int>>()
+    List<int> myList = new List<int>();
 
-    List<int> myList = new List<int>() { 1, 2, 3, 4, 5 };
-    bool result;
+    List<int>List = new List<int>() { 1, 2, 3, 4, 5 };
+    bool actualResult;
 
     //Act
-    list.Add(myList);
-    result = list.Remove(myList);
+    List.Add(myList);
+    actualResult = List.Remove(myList);
 
     //Assert
-    Assert.IsTrue(result);
+    Assert.IsTrue(actualResult);
 }
 
 [TestMethod]
 public void ToStringMethod4()
-    //override string 
+
+{    //override string 
     List<int> list = new List<int>() {1, 2, 3, 4};
-{    //Arrange
-    string expected = "1. 2. 3. 4.";
-    string result;
+    //Arrange
+    string expectedResult = "1. 2. 3. 4.";
+    string actualResult;
     //Act
-    result = List.ToString();
+    actualResult = List.ToString();
     //Assert
-    Assert.AreEqual(result);
+    Assert.AreEqual(expectedResult, actualResult);
 }
 
 [TestMethod]
 public void ToStringMethod5()
 {
+
     //Arrange
+    string expectedResult = " 1 2 3 4 ";
+    CustomList<string> strings = new CustomList<string>();
+    strings.Add("1");
+    strings.Add("2");
+    strings.Add("3");
 
     //Act
-
+    string actualResult = strings.ToString();
     //Assert
+    Assert.AreEqual(expectedResult, actualResult);
+
 }
 
 [TestMethod]
-//public void ZipMethod1()
+public void ZipMethod1()
 {
     //Arrange
     //zip two lists together and return 6
@@ -288,10 +295,10 @@ public void ToStringMethod5()
     
     //Act
     myZipList = odd.Zip(odd);
-    result =myZipList.Count;
+    actualResult =myZipList.Count;
 
     //Assert
-    Assert.AreEqual(expectedResult, actualResult);
+    Assert.AreEqual(expectedResult, actualResult.Count);
 }
 
 
@@ -303,169 +310,202 @@ public void ZipMethod2()
        List<int> odd = new List<int>() { 1, 3, 5, 7 };
        List<int> expectedResult = new List<int>() {1, 2, 3, 4, 5, 6, 7, 8 };
        List<int> result;
+
     //Act
     result = odd.Zip(even);
-
 
     //Assert
     for (int i = 0; i <expectedResult.Count; i++)
     {
         Assert.AreEqual(result[i], expectedResult[i]);
     }
-
 }
 
 [TestMethod]
 public void ZipMethod3()
-{
+{ //return an empty list
     //Arrange
+    List<int> even = new List<int>() { 2, 4, 6, 8 };
+    List<int> empty = new List<int>();
+    List<int> expectedResult = new List<int>();
+    List<int> actualResult;
 
     //Act
+    expectedResult = even.Zip(empty);
 
     //Assert
-
+    for (int i = 0; i < expectedResult.Count; i++)
+    {
+        Assert.AreEqual(actualResult[i], expectedResult[i]);
+    }
 }
 
-[TestMethod]
-public void ZipMethod4()
-{
-    //Arrange
+//[TestMethod]
+//public void ZipMethod4()
+//{
+//    //Arrange
 
-    //Act
+//    //Act
 
-    //Assert
+//    //Assert
 
-}
+//}
 
-[TestMethod]
-public void ZipMethod5()
-{
-    //Arrange
+//[TestMethod]
+//public void ZipMethod5()
+//{
+//    //Arrange
 
-    //Act
+//    //Act
 
-    //Assert
-}
+//    //Assert
+//}
 
 [TestMethod]
 public void OverloadOperatorAddMethod1()
-add the two lists and combine them
+//add the two lists together and combine them
 
 {   //Ararnge
     List<int> list1 = new List<int>() { 10, 20, 30 };
-List<int> list2 = new List<int>() { 40, 50, 60 };
-List<int> expected = new List<int>() { 10, 20, 30, 40, 50, 60 };
-List<int> result;
-Act
-result = list1 + list2;
-Assert
-    for (int i = 0; i<expected.Count; i++)
+    List<int> list2 = new List<int>() { 40, 50, 60 };
+    List<int> expectedResult = new List<int>() { 10, 20, 30, 40, 50, 60 };
+    List<int> actualResult;
+    //Act
+    actualResult = list1 + list2;
+    //Assert
+    for (int i = 0; i<expectedResult.Count; i++)
     {
-        Assert.AreEqual(result[i], expected[i]);
+        Assert.AreEqual(actualResult[i], expectedResult[i]);
     }
 }
 
 
 
 
-        [TestMethod]
+[TestMethod]
 public void OverloadOperatorAddMethod2()
-{
+{//overload add custom list
     //Arrange
+    CustomList<string> expectedResult = new CustomList<string>();
+    expectedResult.Add("A");
+    expectedResult.Add("B");
+    CustomList<string> stringA= new CustomList<string>();
+    CustomList<string> stringB= new CustomList<string>();
+    CustomList<string> actualResult = new CustomList<string>();
+    stringA.Add("A");
+    stringB.Add("B");
 
     //Act
+    actualResult = stringA + stringB;
 
 
     //Assert
-
+    Assert.AreEqual(expectedResult.ToString(), actualResult.ToString());
 
 }
 [TestMethod]
 public void OverloadOperatorAddMethod3()
-{
+{//overload custom list with int
+
     //Arrange
+    CustomList<int> expectedResult = new CustomList<int>() { 10, 20, 30 };
+    CustomList<int> numbers = new CustomList<int>();
+    CustomList<int> actualResult = new CustomList<int>();
 
     //Act
+    actualResult = numbers + numbers;
 
     //Assert
-
+    Assert.AreEqual(expectedResult.ToString(), actualResult.ToString());
 }
 
 [TestMethod]
-public void OverloadOperatorAddMethod4()
-{
-    //Arrange
+//public void OverloadOperatorAddMethod4()
+//{
+//    //Arrange
 
-    //Add
+//    //Add
 
-    //Assert
+//    //Assert
 
-}
-[TestMethod]
-public void OverloadOperatorAddMethod5()
-{
-    //Arrange
+//}
+//[TestMethod]
+//public void OverloadOperatorAddMethod5()
+//{
+//    //Arrange
 
-    //Add
+//    //Add
 
-    //Assert
-}
+//    //Assert
+//}
 
 [TestMethod]
 public void OverloadOperatorSubtractMethod1()
-{
-    //Arrange
-
+{   //subtract three items of the first list 
+    //Ararnge
+    List<int> list1 = new List<int>() { 10, 20, 30, 40, 50 };
+    
+    List<int> expectedResult = new List<int>() {10, 20, 30 };
+    List<int> actualResult;
     //Act
-
+    actualResult = list1 - expectedResult;
     //Assert
+    for (int i = 0; i < expectedResult.Count; i--)
+    {
+        Assert.AreEqual(actualResult[i], expectedResult[i]);
+    }
 
 }
 
-//[TestMethod]
-//public void OverloadOperatorSubtractMethod2()
-//{
-//    //Arrange
+[TestMethod]
+public void OverloadOperatorSubtractMethod2()
+//subtract custom list string
+{
+    //Arrange
+    CustomList<string> expectedResult = new CustomList<string>() {"A"};
+    CustomList<string> stringA = new CustomList<string>();
+    CustomList<string> stringB = new CustomList<string>();
+    CustomList<string> actualResult = new CustomList<string>();
+    stringA.Add("A");
+    stringA.Add("B");
+    stringB.Add("B");
+    
 
-//    //Act
+    //Act
+    stringA = stringA - stringB;
+    for(int i = 0; i < stringA.Count; i++)
+    {
+        actualResult.Add(stringA[i]);
+    }
 
-//    //Assert
+    //Assert
+    Assert.AreEqual(expectedResult.ToString(), actualResult.ToString());
+}
 
-//}
+[TestMethod]
+public void OverloadOperatorSubtractMethod3()
+{   //subtract int from custom list
+    //Arrange
+    CustomList<int> expectedResult = new CustomList<int> { 1, 2, 4, 5, 6 };
+    CustomList<int> numbers = new CustomList<int>();
+    CustomList<int> number = new CustomList<int>();
+    CustomList<int> actualResult = new CustomList<int>();
+    for (int i = 1; i <= 6; i++)
+    {
+        numbers.Add(i);
+    }
+    number.Add(3);
+    //Act
+    numbers = numbers - number;
+    for (int i = 0; i < numbers.Count; i++)
+    {
+        actualResult.Add(numbers[i]);
+    }
+    //Assert
+    Assert.AreEqual(expectedResult.ToString(), actualResult.ToString());
+}
 
-//[TestMethod]
-//public void OverloadOperatorSubtractMethod3()
-//{
-//    //Arrange
-
-//    //Act
-
-//    //Assert
-
-//}
-
-//[TestMethod]
-//public void OverloadOperatorSubtractMethod4()
-//{
-//    //Arrange
-
-//    //Act
-
-//    //Assert
 
 
-//}
 
-//[TestMethod]
-//public void OverloadOperatorSubtractMethod5()
-//{
 
-//    //Arrange
-
-//    //Act
-
-//    //Assert
-
-//}
-//  }
-//}
