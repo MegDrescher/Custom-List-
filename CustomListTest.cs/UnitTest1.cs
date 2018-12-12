@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CustomList;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -208,9 +209,6 @@ public void ToStringMethod1()
 
     //Assert
     Assert.AreEqual(expectedResult, actualResult);
-
-
-
 }
 
 
@@ -220,20 +218,26 @@ public void ToStringMethod2()
     //override string return with spaces and not commas
     //Arrange
     string<int> List = new myList<int>() { 1, 2, 3, 4, 5, 6 };
-    string expectedResult = "1 2 3 4 5 ";
+    string expectedResult = { 1 2 3 4 5 };
     string result;
 
     //Act
     result = myList.ToString();
     //Assert
-    Assert.AreEqual(ExpectedResult, actualResult);
+    for (int i = 0; i < expectedResult.Count; i++)
+    {
+        Assert.AreEqual(Assert.AreEqual(result[i], expected[i]);
+    }
+
+    
+   
 }
 
 
 
 [TestMethod]
 public void ToStringMethod3()
-{   //remove string from the list
+{   //remove string from the list with bool
 
     //Arrange
     List<List<int>> list = new List<List<int>>()
@@ -246,17 +250,20 @@ public void ToStringMethod3()
     result = list.Remove(myList);
 
     //Assert
-    Assert.AreEqual(ExpectedResult, actualResult);
+    Assert.IsTrue(result);
 }
 
 [TestMethod]
 public void ToStringMethod4()
-{   // 
-    //Arrange
-
+    //override string 
+    List<int> list = new List<int>() {1, 2, 3, 4};
+{    //Arrange
+    string expected = "1. 2. 3. 4.";
+    string result;
     //Act
-
+    result = List.ToString();
     //Assert
+    Assert.AreEqual(result);
 }
 
 [TestMethod]
@@ -269,129 +276,151 @@ public void ToStringMethod5()
     //Assert
 }
 
-//[TestMethod]
-////public void ZipMethod1()
-//{
-//    //Arrange
+[TestMethod]
+//public void ZipMethod1()
+{
+    //Arrange
+    //zip two lists together and return 6
+    List<int> even = new List<int>() { 2, 4, 6, 8 };
+    List<int> odd = new List<int>() { 1, 3, 5, 7 };
+    List<int> myZipList;
+    int expectedResult = 6;
+    
+    //Act
+    myZipList = odd.Zip(odd);
+    result =myZipList.Count;
 
-//    //Act
-
-//    //Assert
-//}
-
-//[TestMethod]
-//public void ZipMethod2()
-//{
-//    //Arrange
-
-//    //Act
-
-//    //Assert
-
-//}
-
-//[TestMethod]
-//public void ZipMethod3()
-//{
-//    //Arrange
-
-//    //Act
-
-//    //Assert
-
-//}
-
-//[TestMethod]
-//public void ZipMethod4()
-//{
-//    //Arrange
-
-//    //Act
-
-//    //Assert
-
-//}
-
-//[TestMethod]
-//public void ZipMethod5()
-//{
-//    //Arrange
-
-//    //Act
-
-//    //Assert
-//}
-
-//[TestMethod]
-//public void OverloadOperatorAddMethod1()
-////add the two lists and combine them
-
-//{   //Ararnge
-//    List<int> list1 = new List<int>() { 10, 20, 30 };
-//    List<int> list2 = new List<int>() { 40, 50, 60 };
-//    List<int> expected = new List<int>() { 10, 20, 30, 40, 50, 60 };
-//    List<int> result;
-//    //Act
-//    result = list1 + list2;
-//    //Assert
-//    for (int i = 0; i < expected.Count; i++)
-//    {
-//        Assert.AreEqual(result[i], expected[i];)
-//            }
-//        }
-//        [TestMethod]
-//public void OverloadOperatorAddMethod2()
-//{
-//    //Arrange
-
-//    //Act
+    //Assert
+    Assert.AreEqual(expectedResult, actualResult);
+}
 
 
-//    //Assert
+[TestMethod]
+public void ZipMethod2()
+{ //zip together the two lists and return a new list
+  //Arrange
+       List<int> even = new List<int>() { 2, 4, 6, 8 };
+       List<int> odd = new List<int>() { 1, 3, 5, 7 };
+       List<int> expectedResult = new List<int>() {1, 2, 3, 4, 5, 6, 7, 8 };
+       List<int> result;
+    //Act
+    result = odd.Zip(even);
 
 
-//}
-//[TestMethod]
-//public void OverloadOperatorAddMethod3()
-//{
-//    //Arrange
+    //Assert
+    for (int i = 0; i <expectedResult.Count; i++)
+    {
+        Assert.AreEqual(result[i], expectedResult[i]);
+    }
 
-//    //Act
+}
 
-//    //Assert
+[TestMethod]
+public void ZipMethod3()
+{
+    //Arrange
 
-//}
+    //Act
 
-//[TestMethod]
-//public void OverloadOperatorAddMethod4()
-//{
-//    //Arrange
+    //Assert
 
-//    //Add
+}
 
-//    //Assert
+[TestMethod]
+public void ZipMethod4()
+{
+    //Arrange
 
-//}
-//[TestMethod]
-//public void OverloadOperatorAddMethod5()
-//{
-//    //Arrange
+    //Act
 
-//    //Add
+    //Assert
 
-//    //Assert
-//}
+}
 
-//[TestMethod]
-//public void OverloadOperatorSubtractMethod1()
-//{
-//    //Arrange
+[TestMethod]
+public void ZipMethod5()
+{
+    //Arrange
 
-//    //Act
+    //Act
 
-//    //Assert
+    //Assert
+}
 
-//}
+[TestMethod]
+public void OverloadOperatorAddMethod1()
+add the two lists and combine them
+
+{   //Ararnge
+    List<int> list1 = new List<int>() { 10, 20, 30 };
+List<int> list2 = new List<int>() { 40, 50, 60 };
+List<int> expected = new List<int>() { 10, 20, 30, 40, 50, 60 };
+List<int> result;
+Act
+result = list1 + list2;
+Assert
+    for (int i = 0; i<expected.Count; i++)
+    {
+        Assert.AreEqual(result[i], expected[i]);
+    }
+}
+
+
+
+
+        [TestMethod]
+public void OverloadOperatorAddMethod2()
+{
+    //Arrange
+
+    //Act
+
+
+    //Assert
+
+
+}
+[TestMethod]
+public void OverloadOperatorAddMethod3()
+{
+    //Arrange
+
+    //Act
+
+    //Assert
+
+}
+
+[TestMethod]
+public void OverloadOperatorAddMethod4()
+{
+    //Arrange
+
+    //Add
+
+    //Assert
+
+}
+[TestMethod]
+public void OverloadOperatorAddMethod5()
+{
+    //Arrange
+
+    //Add
+
+    //Assert
+}
+
+[TestMethod]
+public void OverloadOperatorSubtractMethod1()
+{
+    //Arrange
+
+    //Act
+
+    //Assert
+
+}
 
 //[TestMethod]
 //public void OverloadOperatorSubtractMethod2()

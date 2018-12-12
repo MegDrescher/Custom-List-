@@ -21,7 +21,7 @@ namespace CustomList
         private int count;
         public int Count { get { return count; } }
         public int index;
-        
+
 
         public CustomList()
         {
@@ -50,7 +50,7 @@ namespace CustomList
 
         public void Remove(T valueToRemove)
 
-        {     
+        {
             T[] tempArray = new T[Capacity];
             //tempArray[i] = items[valueToRemove];
             int j = 0;
@@ -63,7 +63,7 @@ namespace CustomList
                         i++;
                         tempArray[j] = items[i];
                     }
-                    else if(count == items.Length)
+                    else if (count == items.Length)
                     {
                         break;
                     }
@@ -76,156 +76,7 @@ namespace CustomList
             items = new T[count];
             items = tempArray;
             count--;
-
-
-             
-
-                
-               
-            
-
-     
-        }   
+        }
     }
 }
-
-//tempArray[i] = items[i];
-//index++;
-
-//if ((tempArray[i].Equals(defaultValue)) && (tempArray.Length < count))
-//{
-//    tempArray[i] = items[i];
-//}
-//items = tempArray;
-//count--;   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
