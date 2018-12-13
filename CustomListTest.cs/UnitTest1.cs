@@ -342,7 +342,7 @@ public void ZipMethod3()
 
 //[TestMethod]
 //public void ZipMethod4()
-//{
+//{   //zip two lists together to convert to "Packers"
 //    //Arrange
 
 //    //Act

@@ -30,7 +30,8 @@ namespace CustomList
             count = 0;
         }
 
-
+        
+        
         public void Add(T value)
         {
             if (count == Capacity)
@@ -80,19 +81,33 @@ namespace CustomList
 
         //use yield return after foreach loop & public IEnumerator GetEnumerator()
         //convert list to string, using a for loop to create string
-        public void OverrideToString<T>()
+        public override string ToString() 
         {
-            CustomList<string> strings = new CustomList<string>();
+            string name = "M" + "H";
+            name += "";
+
+            string result = "";
+            for (int i = 0; i < this.Count(); i++) ;
+            output = Integer.toString(this.Get(i));
+
+
+
+
+            return result;
             
+            //foreach (string value in myList)
+            {
+
+            }
+
+            //myList = List + List;
+            //yield return;
+           
 
 
         }
 
-
-
-
-
-        //foreach (int value in myList)
+        
 
         public void Zip(T value)
         {
